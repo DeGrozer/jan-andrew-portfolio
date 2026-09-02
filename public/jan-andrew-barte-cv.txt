@@ -1,0 +1,17 @@
+JAN ANDREW BARTE
+
+Developer / Builder / UI and UX enthusiast
+Bicol, Philippines
+Email: janandrewbarte@gmail.com
+
+PROFILE
+Bachelor of Science in Information Technology graduate from Camarines Sur Polytechnic Colleges. Interested in front-end development, UI/UX design, web development, cybersecurity, APIs, and system-level applications.
+
+TECHNICAL FOCUS
+PHP, HTML, CSS, JavaScript, CodeIgniter, MySQL, Java, React, Tailwind CSS
+
+INTERESTS
+Building useful web experiences, exploring AI-assisted development, visual design, music editing, writing, and volleyball-related technology projects.
+
+PORTFOLIO
+https://github.com/degrozer
