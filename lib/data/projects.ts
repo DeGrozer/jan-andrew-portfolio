@@ -67,7 +67,7 @@ export const selectedWorkProjects: PortfolioProject[] = [
       { src: "/images/projects/eng/eng.webp", alt: "EnG Bakery dashboard overview" },
     ],
     imageAlt: "EnG Bakery project screenshot",
-    liveUrl: "https://example.com/eng-bakery",
+    liveUrl: "https://engbakery-karangahan-main.in/",
     status: "active",
   },
   {
