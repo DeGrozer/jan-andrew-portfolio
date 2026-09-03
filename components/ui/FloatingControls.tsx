@@ -39,13 +39,8 @@ export function FloatingControls() {
         const updateHeroVisibility = () => {
             if (!hero) return;
 
-            const isMobile = window.innerWidth < 768;
-            const isVisible = isMobile
-                ? window.scrollY < hero.offsetTop + hero.offsetHeight - 1
-                : (() => {
-                    const bounds = hero.getBoundingClientRect();
-                    return bounds.top <= 0 && bounds.bottom >= window.innerHeight * 0.98;
-                })();
+            const heroEnd = hero.offsetTop + hero.offsetHeight;
+            const isVisible = window.scrollY < heroEnd;
             setHeroVisible(isVisible);
             if (!isVisible) setControlsOpen(false);
         };
@@ -78,6 +73,14 @@ export function FloatingControls() {
         setExperience(next);
         window.localStorage.setItem(EXPERIENCE_KEY, next);
         document.documentElement.dataset.experience = next;
+        requestAnimationFrame(() => {
+            const hero = document.getElementById("home");
+            if (!hero) return;
+
+            const isHeroVisible = window.scrollY < hero.offsetTop + hero.offsetHeight;
+            setHeroVisible(isHeroVisible);
+            if (!isHeroVisible) setControlsOpen(false);
+        });
     };
 
     if (!mounted) {
