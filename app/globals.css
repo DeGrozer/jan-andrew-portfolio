@@ -539,14 +539,14 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
   .navigation-controls {
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-0.4rem);
-    transition: opacity 260ms ease, transform 260ms ease;
+    transform: none;
+    transition: opacity 260ms ease;
   }
 
   .navigation-controls.is-visible {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
+    transform: none;
   }
 
   .navigation-tooltip {

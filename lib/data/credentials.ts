@@ -25,22 +25,22 @@ export const education: EducationEntry[] = [
     {
         stage: "2020 - 2022",
         degree: "Senior High School",
-        institution: "Humanities and Social Studies (HUMSS)",
-        detail: "Senior High",
+        institution: "Nabua National High School",
+        detail: "HUMSS strand",
         distinction: "",
     },
     {
         stage: "2016 - 2020",
         degree: "Junior High School",
         institution: "Computer Science High School of Bicolandia",
-        detail: "Junior High",
+        detail: "",
         distinction: "",
     },
     {
         stage: "2009 - 2016",
         degree: "Elementary",
         institution: "School of the Future",
-        detail: "Elementary",
+        detail: "",
         distinction: "",
     },
 ];
