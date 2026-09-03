@@ -249,14 +249,12 @@ export function HeroSection() {
                     <div className="pointer-events-none absolute bottom-[max(1.75rem,env(safe-area-inset-bottom))] left-1/2 z-20 -translate-x-1/2 text-center md:bottom-8">
                         <Link
                             href="/#selected-work"
-                            className="scroll-cue pointer-events-auto inline-flex flex-col items-center gap-2 pb-2"
+                            className="pointer-events-auto inline-flex pb-2"
                         >
                             <span className="label-mono text-[0.62rem] tracking-[0.18em]">{siteProfile.scrollLabel}</span>
-                            <span className="scroll-cue-arrow" aria-hidden="true">
-                                <span className="scroll-cue-arrow-head" />
-                            </span>
                         </Link>
                     </div>
+
                 </div>
             </div>
         </section>

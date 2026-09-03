@@ -50,13 +50,11 @@ export default function HomePage() {
                     </div>
 
                     <div className="md:col-span-1">
-                        <div
-                            data-interactive-reveal="right"
-                            data-interactive-float
-                            className="about-portrait relative flex aspect-square w-full items-end overflow-hidden border border-[color:var(--border)] bg-[color:var(--surface)]/40 p-4 md:aspect-[4/5]"
-                        >
-                            <Image src="/images/portrait/barte.webp" alt="Jan Andrew Barte" fill sizes="(max-width: 767px) 100vw, 33vw" className="object-contain object-center" priority />
-                            <span className="pointer-events-none absolute inset-x-4 bottom-4 label-mono text-[0.64rem] leading-relaxed text-white drop-shadow-md">JAN ANDREW BARTE</span>
+                        <div data-interactive-reveal="right" data-interactive-float>
+                            <div className="about-portrait relative flex aspect-square w-full items-end overflow-hidden border border-[color:var(--border)] bg-[color:var(--surface)]/40 p-4 md:aspect-[4/5]">
+                                <Image src="/images/portrait/barte.webp" alt="Jan Andrew Barte" fill sizes="(max-width: 767px) 100vw, 33vw" className="object-contain object-center" priority />
+                            </div>
+                            <span className="pointer-events-none mt-3 block label-mono text-[0.64rem] leading-relaxed text-[color:var(--foreground)] md:absolute md:inset-x-4 md:bottom-4 md:mt-0 md:text-white md:drop-shadow-md">JAN ANDREW BARTE</span>
                         </div>
                     </div>
                 </div>

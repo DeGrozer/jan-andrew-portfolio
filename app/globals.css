@@ -737,56 +737,6 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
   .contact-social--codepen:hover,
   .contact-social--codepen:focus-visible { color: #000; border-color: #000; }
 
-  .scroll-cue {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    color: var(--foreground);
-    text-decoration: none;
-  }
-
-  .scroll-cue-arrow {
-    position: relative;
-    display: block;
-    width: 0.85rem;
-    height: 1.45rem;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    overflow: hidden;
-    background: color-mix(in oklab, var(--surface), transparent 20%);
-  }
-
-  .scroll-cue-arrow-head {
-    position: absolute;
-    left: 50%;
-    top: 0.24rem;
-    width: 0.22rem;
-    height: 0.22rem;
-    border-radius: 999px;
-    background: var(--foreground);
-    transform: translateX(-50%);
-    animation: scroll-cue-down 2s ease-in-out infinite;
-  }
-
-  @keyframes scroll-cue-down {
-    0% {
-      opacity: 0;
-      transform: translateX(-50%) translateY(-0.2rem);
-    }
-    20% {
-      opacity: 1;
-    }
-    60% {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0.65rem);
-    }
-    100% {
-      opacity: 0;
-      transform: translateX(-50%) translateY(1rem);
-    }
-  }
-
   .education-timeline-track {
     position: relative;
     padding-left: 1.8rem;
@@ -1117,6 +1067,7 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
   }
 
   .project-screenshot-auto-card {
+    position: relative;
     flex: 0 0 100%;
     display: grid;
     place-items: center;
@@ -1169,6 +1120,8 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
   }
 
   .project-carousel-auto-indicator {
+    padding: 0;
+    border: 0;
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 999px;

@@ -3,16 +3,39 @@
 import { FaCodepen, FaDiscord, FaEnvelope, FaLetterboxd, FaMedium, FaWikipediaW } from "react-icons/fa6";
 import { SiFacebook, SiGithub } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 export function ContactSection() {
     const [cvOpen, setCvOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
+    const cvButtonRef = useRef<HTMLButtonElement>(null);
+    const cvDialogRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setMounted(true);
     }, []);
+
+    useEffect(() => {
+        if (!cvOpen) return;
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        cvDialogRef.current?.focus();
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                setCvOpen(false);
+                cvButtonRef.current?.focus();
+            }
+        };
+
+        document.addEventListener("keydown", handleKeyDown);
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [cvOpen]);
 
     return (
         <section
@@ -75,7 +98,7 @@ export function ContactSection() {
                 </div>
 
                 <div className="mt-8 flex flex-wrap items-center gap-6">
-                    <button type="button" onClick={() => setCvOpen(true)} className="contact-cv group inline-flex items-center gap-3">
+                    <button ref={cvButtonRef} type="button" onClick={() => setCvOpen(true)} className="contact-cv group inline-flex items-center gap-3">
                     <span className="label-mono">VIEW CV</span>
                     <span className="text-lg" aria-hidden="true">↗</span>
                     </button>
@@ -84,7 +107,7 @@ export function ContactSection() {
 
             {cvOpen && mounted && createPortal(
                 <div className="cv-modal-backdrop" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && setCvOpen(false)}>
-                    <div className="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title">
+                    <div ref={cvDialogRef} className="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title" tabIndex={-1}>
                         <div className="flex items-center justify-between gap-4">
                             <h3 id="cv-modal-title" className="headline-serif text-3xl">Curriculum Vitae</h3>
                             <button type="button" className="cv-modal-close label-mono" onClick={() => setCvOpen(false)} aria-label="Close CV preview">CLOSE</button>

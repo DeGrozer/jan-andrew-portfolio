@@ -31,6 +31,7 @@ export function EasterEggZone({
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
           handleClick();
         }
       }}

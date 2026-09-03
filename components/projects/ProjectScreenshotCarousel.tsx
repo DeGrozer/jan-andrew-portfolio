@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface ProjectScreenshot {
     src: string;
@@ -16,17 +17,26 @@ interface ProjectScreenshotCarouselProps {
 
 export function ProjectScreenshotCarousel({ screenshots, projectName, liveUrl, overlayLabel }: ProjectScreenshotCarouselProps) {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
+    const [reducedMotion, setReducedMotion] = useState(false);
 
-    // Auto-play carousel
     useEffect(() => {
-        if (screenshots.length <= 1) return;
+        const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const updatePreference = () => setReducedMotion(mediaQuery.matches);
+        updatePreference();
+        mediaQuery.addEventListener("change", updatePreference);
+        return () => mediaQuery.removeEventListener("change", updatePreference);
+    }, []);
+
+    useEffect(() => {
+        if (screenshots.length <= 1 || reducedMotion || isPaused) return;
 
         const interval = setInterval(() => {
             setActiveIndex((current) => (current + 1) % screenshots.length);
         }, 4000); // Change slide every 4 seconds
 
         return () => clearInterval(interval);
-    }, [screenshots.length]);
+    }, [isPaused, reducedMotion, screenshots.length]);
 
     if (!screenshots.length) {
         return (
@@ -46,7 +56,7 @@ export function ProjectScreenshotCarousel({ screenshots, projectName, liveUrl, o
     };
 
     return (
-        <div className="project-carousel-auto" role="region" aria-label={`${projectName} screenshots`}>
+        <div className="project-carousel-auto" role="region" aria-label={`${projectName} screenshots`} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} onFocusCapture={() => setIsPaused(true)} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setIsPaused(false); }}>
             <div className="project-carousel-auto-viewport">
                 <div 
                     className="project-carousel-auto-track" 
@@ -55,7 +65,7 @@ export function ProjectScreenshotCarousel({ screenshots, projectName, liveUrl, o
                 >
                     {screenshots.map((screenshot, idx) => (
                         <div key={`${projectName}-screenshot-${idx}`} className="project-screenshot-auto-card">
-                            <img src={screenshot.src} alt={screenshot.alt} />
+                            <Image src={screenshot.src} alt={screenshot.alt} fill sizes="(max-width: 767px) 100vw, 58vw" />
                         </div>
                     ))}
                 </div>
@@ -81,10 +91,13 @@ export function ProjectScreenshotCarousel({ screenshots, projectName, liveUrl, o
             {screenshots.length > 1 && (
                 <div className="project-carousel-auto-indicators">
                     {screenshots.map((_, idx) => (
-                        <div
+                        <button
+                            type="button"
+                            onClick={() => setActiveIndex(idx)}
                             key={`indicator-${idx}`}
                             className={`project-carousel-auto-indicator ${idx === activeIndex ? "active" : ""}`}
-                            aria-current={idx === activeIndex}
+                            aria-label={`Show screenshot ${idx + 1}`}
+                            aria-current={idx === activeIndex ? "true" : undefined}
                         />
                     ))}
                 </div>

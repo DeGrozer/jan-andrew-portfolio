@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { selectedWorkProjects } from "@/lib/data/projects";
 import { ProjectScreenshotCarousel } from "@/components/projects/ProjectScreenshotCarousel";
 
 type ProjectPageProps = {
     params: Promise<{ slug: string }>;
 };
+
+export function generateStaticParams() {
+    return selectedWorkProjects.map((project) => ({ slug: project.slug }));
+}
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
     const { slug } = await params;
@@ -21,17 +26,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     const { slug } = await params;
     const project = selectedWorkProjects.find((p) => p.slug === slug);
 
-    if (!project) {
-        return (
-            <main className="container-editorial py-20">
-                <p className="label-mono">PROJECT / {slug.toUpperCase()}</p>
-                <h1 className="headline-serif mt-6 text-5xl md:text-7xl">Project not found.</h1>
-                <Link href="/" className="mt-10 inline-block border-b border-[color:var(--border)] pb-1">
-                    Back to home
-                </Link>
-            </main>
-        );
-    }
+    if (!project) notFound();
 
     return (
         <main className="container-editorial py-20">
@@ -55,13 +50,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
             <div className="mt-16">
                 <p className="label-mono mb-8">SCREENSHOTS</p>
-                <ProjectScreenshotCarousel 
-                    screenshots={[
-                        // Add your screenshots here:
-                        // { src: "/images/projects/asog/screenshot-1.webp", alt: "ASOG TBI Screenshot 1" },
-                        // { src: "/images/projects/asog/screenshot-2.webp", alt: "ASOG TBI Screenshot 2" },
-                    ]} 
-                    projectName={project.slug} 
+                <ProjectScreenshotCarousel
+                    screenshots={project.screenshots ?? []}
+                    projectName={project.slug}
+                    liveUrl={project.liveUrl}
                 />
             </div>
 

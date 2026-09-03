@@ -1,25 +1,11 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import { HeroScene } from "@/components/three/HeroScene";
 
-function useReducedMotionPreference() {
-    return useMemo(() => {
-        if (typeof window === "undefined") {
-            return false;
-        }
-
-        return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    }, []);
-}
-
 function supportsWebGL() {
-    if (typeof window === "undefined") {
-        return false;
-    }
-
     try {
         const canvas = document.createElement("canvas");
         return Boolean(
@@ -31,8 +17,19 @@ function supportsWebGL() {
 }
 
 export function HeroCanvas() {
-    const reducedMotion = useReducedMotionPreference();
-    const canRender = supportsWebGL();
+    const [ready, setReady] = useState(false);
+    const [reducedMotion, setReducedMotion] = useState(false);
+    const [canRender, setCanRender] = useState(false);
+
+    useEffect(() => {
+        setReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+        setCanRender(supportsWebGL());
+        setReady(true);
+    }, []);
+
+    if (!ready) {
+        return null;
+    }
 
     if (!canRender) {
         return (
