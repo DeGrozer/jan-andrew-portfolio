@@ -40,7 +40,7 @@ export function FloatingControls() {
             if (!hero) return;
 
             const bounds = hero.getBoundingClientRect();
-            const isVisible = bounds.top < window.innerHeight && bounds.bottom > 0;
+            const isVisible = bounds.top <= 0 && bounds.bottom >= window.innerHeight * 0.98;
             setHeroVisible(isVisible);
             if (!isVisible) setControlsOpen(false);
         };
