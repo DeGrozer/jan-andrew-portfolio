@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export type EasterEggType = "explorations-tile" | "about-name" | null;
+export type EasterEggType = "explorations-tile" | null;
 
 interface EasterEggState {
   active: EasterEggType;

@@ -44,20 +44,6 @@ export function EasterEggs() {
         </div>
       )}
 
-      {/* About Section Easter Egg */}
-      {easterEggState.active === "about-name" && (
-        <div className={styles["easter-egg-container"]}>
-          <div className={styles["about-easter-egg"]}>
-            <div className={styles["easter-egg-message"]}>
-              <p className={styles["easter-egg-text"]}>
-                {easterEggState.count === 1 && "Curious, huh?"}
-                {easterEggState.count === 2 && "Still clicking?"}
-                {easterEggState.count >= 3 && "Thanks for visiting! 👋"}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }

@@ -5,7 +5,6 @@ import { TechStackSection } from "@/components/sections/TechStack";
 import { ExplorationsSection } from "@/components/sections/Explorations";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Footer } from "@/components/sections/Footer";
-import { EasterEggZone } from "@/components/ui/EasterEggZone";
 import { education } from "@/lib/data/credentials";
 import Image from "next/image";
 
@@ -23,18 +22,16 @@ export default function HomePage() {
             >
                 <div className="grid gap-12 md:grid-cols-3 md:items-start lg:gap-16">
                     <div data-interactive-reveal="right" className="md:col-span-2">
-                        <EasterEggZone zone="about-name" style={{ display: 'contents' }}>
-                            <h2
-                                data-interactive-reveal
-                                id="about-heading"
-                                className="section-heading headline-serif text-left text-5xl md:text-6xl lg:text-7xl"
-                            >
-                                <span className="interactive-word">Hi,</span>{" "}
-                                <span className="interactive-word">I&apos;m</span>{" "}
-                                <span className="interactive-word">Jan</span>{" "}
-                                <span className="interactive-word">Andrew.</span>
-                            </h2>
-                        </EasterEggZone>
+                        <h2
+                            data-interactive-reveal
+                            id="about-heading"
+                            className="section-heading headline-serif text-left text-5xl md:text-6xl lg:text-7xl"
+                        >
+                            <span className="interactive-word">Hi,</span>{" "}
+                            <span className="interactive-word">I&apos;m</span>{" "}
+                            <span className="interactive-word">Jan</span>{" "}
+                            <span className="interactive-word">Andrew.</span>
+                        </h2>
 
                         <div data-interactive-reveal className="mt-10 space-y-6 text-lg leading-relaxed text-[color:var(--foreground)]/85 md:text-lg lg:text-xl">
                             <p>
