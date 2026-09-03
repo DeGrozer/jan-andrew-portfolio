@@ -39,8 +39,13 @@ export function FloatingControls() {
         const updateHeroVisibility = () => {
             if (!hero) return;
 
-            const bounds = hero.getBoundingClientRect();
-            const isVisible = bounds.top <= 0 && bounds.bottom >= window.innerHeight * 0.98;
+            const isMobile = window.innerWidth < 768;
+            const isVisible = isMobile
+                ? window.scrollY < hero.offsetTop + hero.offsetHeight - 1
+                : (() => {
+                    const bounds = hero.getBoundingClientRect();
+                    return bounds.top <= 0 && bounds.bottom >= window.innerHeight * 0.98;
+                })();
             setHeroVisible(isVisible);
             if (!isVisible) setControlsOpen(false);
         };
