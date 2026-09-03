@@ -40,7 +40,8 @@ export function FloatingControls() {
             if (!hero) return;
 
             const heroEnd = hero.offsetTop + hero.offsetHeight;
-            const isVisible = window.scrollY < heroEnd;
+            const fadeStart = Math.min(window.innerHeight * 0.55, hero.offsetHeight * 0.55);
+            const isVisible = window.scrollY < heroEnd - fadeStart;
             setHeroVisible(isVisible);
             if (!isVisible) setControlsOpen(false);
         };
@@ -77,7 +78,8 @@ export function FloatingControls() {
             const hero = document.getElementById("home");
             if (!hero) return;
 
-            const isHeroVisible = window.scrollY < hero.offsetTop + hero.offsetHeight;
+            const fadeStart = Math.min(window.innerHeight * 0.55, hero.offsetHeight * 0.55);
+            const isHeroVisible = window.scrollY < hero.offsetTop + hero.offsetHeight - fadeStart;
             setHeroVisible(isHeroVisible);
             if (!isHeroVisible) setControlsOpen(false);
         });
@@ -89,7 +91,7 @@ export function FloatingControls() {
 
     return (
         <>
-            <div className={`navigation-controls fixed right-5 top-5 z-[70] flex flex-col items-end gap-3 md:right-7 md:top-7 ${heroVisible ? "is-visible" : ""}`} aria-hidden={!heroVisible}>
+            <div className={`navigation-controls fixed top-5 z-[70] flex w-max flex-col items-end gap-3 md:top-7 ${heroVisible ? "is-visible" : ""}`} aria-hidden={!heroVisible}>
                 <button
                     type="button"
                     onClick={() => setControlsOpen((open) => !open)}

@@ -30,6 +30,7 @@ html[data-theme="dark"] {
 html {
   scroll-behavior: smooth;
   scrollbar-width: none;
+  overflow-x: clip;
 }
 
 html::-webkit-scrollbar,
@@ -40,6 +41,8 @@ body::-webkit-scrollbar {
 body {
   margin: 0;
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: clip;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-manrope), sans-serif;
@@ -537,6 +540,7 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
   }
 
   .navigation-controls {
+    right: max(0.75rem, env(safe-area-inset-right));
     opacity: 0;
     pointer-events: none;
     transform: none;
@@ -547,6 +551,12 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
     opacity: 1;
     pointer-events: auto;
     transform: none;
+  }
+
+  @media (min-width: 768px) {
+    .navigation-controls {
+      right: 1.75rem;
+    }
   }
 
   .navigation-tooltip {
