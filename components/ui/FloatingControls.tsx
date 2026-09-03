@@ -15,6 +15,7 @@ export function FloatingControls() {
     const [experience, setExperience] = useState<ExperienceMode>("interactive");
     const [controlsOpen, setControlsOpen] = useState(false);
     const [showScrollTop, setShowScrollTop] = useState(false);
+    const [heroVisible, setHeroVisible] = useState(true);
 
     useEffect(() => {
         const savedTheme = window.localStorage.getItem(THEME_KEY);
@@ -34,14 +35,28 @@ export function FloatingControls() {
         setMounted(true);
 
         let previousY = window.scrollY;
+        const hero = document.getElementById("home");
+        const updateHeroVisibility = () => {
+            if (!hero) return;
+
+            const bounds = hero.getBoundingClientRect();
+            const isVisible = bounds.top < window.innerHeight && bounds.bottom > 0;
+            setHeroVisible(isVisible);
+            if (!isVisible) setControlsOpen(false);
+        };
+
         const handleScroll = () => {
             const currentY = window.scrollY;
             setShowScrollTop(currentY > 120 && currentY < previousY);
+            updateHeroVisibility();
             previousY = currentY;
         };
         window.addEventListener("scroll", handleScroll, { passive: true });
+        window.addEventListener("resize", updateHeroVisibility);
+        updateHeroVisibility();
         return () => {
             window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", updateHeroVisibility);
         };
     }, []);
 
@@ -66,14 +81,14 @@ export function FloatingControls() {
 
     return (
         <>
-        <div className="navigation-controls is-visible fixed right-5 top-5 z-[70] flex flex-col items-end gap-3 md:right-7 md:top-7">
+        <div className={`navigation-controls fixed right-5 top-5 z-[70] flex flex-col items-end gap-3 md:right-7 md:top-7 ${heroVisible ? "is-visible" : ""}`} aria-hidden={!heroVisible}>
             <button
                 type="button"
                 onClick={() => setControlsOpen((open) => !open)}
                 className="navigation-trigger group relative flex h-12 w-12 items-center justify-center text-[color:var(--foreground)] transition-colors hover:text-[color:var(--focus)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--focus)]"
                 aria-label={controlsOpen ? "Close navigation controls" : "Open navigation controls"}
                 aria-expanded={controlsOpen}
-                tabIndex={0}
+                tabIndex={heroVisible ? 0 : -1}
             >
                 {controlsOpen ? <X size={23} strokeWidth={1.5} /> : <Compass size={23} strokeWidth={1.5} />}
                 <span className="navigation-tooltip">Navigation</span>
