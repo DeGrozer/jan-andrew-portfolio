@@ -838,6 +838,11 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
     animation-play-state: paused;
   }
 
+  html:not([data-experience="interactive"]) .tech-marquee-viewport:hover .tech-marquee-track,
+  html:not([data-experience="interactive"]) .tech-marquee-viewport:focus-within .tech-marquee-track {
+    animation-play-state: paused;
+  }
+
   .site-navigation {
     border-left: 1px solid var(--border);
     padding-left: 1.5rem;

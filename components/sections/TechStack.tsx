@@ -1,6 +1,8 @@
+"use client";
+
 import type { CSSProperties } from "react";
 import type { IconType } from "react-icons";
-import { Braces, Globe2, Layers3, Wrench } from "lucide-react";
+import { Braces, Globe2, Layers3, ShieldCheck, Wrench } from "lucide-react";
 import {
   SiBootstrap,
   SiCodeigniter,
@@ -13,8 +15,11 @@ import {
   SiJupyter,
   SiLaravel,
   SiLinux,
+  SiMetasploit,
+  SiNextdotjs,
   SiNotion,
   SiOpenjdk,
+  SiPfsense,
   SiPycharm,
   SiPhp,
   SiPython,
@@ -24,6 +29,8 @@ import {
   SiSublimetext,
   SiSpringboot,
   SiTailwindcss,
+  SiVirtualbox,
+  SiVmware,
   SiCss,
   SiWebcomponentsdotorg,
 } from "react-icons/si";
@@ -46,6 +53,7 @@ const techIconMap: Record<string, IconType> = {
   springboot: SiSpringboot,
   react: SiReact,
   laravel: SiLaravel,
+  nextjs: SiNextdotjs,
   github: SiGithub,
   vscode: VscVscode,
   sublime: SiSublimetext,
@@ -55,6 +63,10 @@ const techIconMap: Record<string, IconType> = {
   pycharm: SiPycharm,
   git: SiGit,
   linux: SiLinux,
+  vmware: SiVmware,
+  virtualbox: SiVirtualbox,
+  pfsense: SiPfsense,
+  metasploitable: SiMetasploit,
 };
 
 const techBrandColorMap: Record<string, string> = {
@@ -73,6 +85,7 @@ const techBrandColorMap: Record<string, string> = {
   springboot: "#6db33f",
   react: "#61dafb",
   laravel: "#ff2d20",
+  nextjs: "#111111",
   github: "#6e5494",
   vscode: "#007acc",
   sublime: "#ff9800",
@@ -82,6 +95,10 @@ const techBrandColorMap: Record<string, string> = {
   pycharm: "#21d789",
   git: "#f05032",
   linux: "#fcc624",
+  vmware: "#607078",
+  virtualbox: "#183a61",
+  pfsense: "#212121",
+  metasploitable: "#4f8cc9",
 };
 
 const categoryMarkMap = {
@@ -89,6 +106,7 @@ const categoryMarkMap = {
   "web-scripting": Globe2,
   "frameworks-libraries": Layers3,
   "tools-environment": Wrench,
+  "ethical-hacking-tools": ShieldCheck,
 };
 
 export function TechStackSection() {
@@ -132,6 +150,18 @@ export function TechStackSection() {
               <div
                 className={`tech-marquee-track ${row.direction === "left" ? "is-reverse" : ""}`}
                 style={{ "--marquee-duration": `${row.durationSeconds}s` } as CSSProperties}
+                onMouseEnter={(event) => {
+                  event.currentTarget.style.animationPlayState = "paused";
+                }}
+                onMouseLeave={(event) => {
+                  event.currentTarget.style.animationPlayState = "running";
+                }}
+                onFocus={(event) => {
+                  event.currentTarget.style.animationPlayState = "paused";
+                }}
+                onBlur={(event) => {
+                  event.currentTarget.style.animationPlayState = "running";
+                }}
               >
                 {[0, 1, 2].map((copyIndex) => (
                   <ul

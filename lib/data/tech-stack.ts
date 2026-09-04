@@ -25,6 +25,12 @@ export const techStackCategories: TechStackCategory[] = [
     direction: "left",
     durationSeconds: 44,
   },
+  {
+    id: "ethical-hacking-tools",
+    label: "ETHICAL HACKING TOOLS",
+    direction: "right",
+    durationSeconds: 40,
+  },
 ];
 
 export const techStackItems: TechStackItem[] = [
@@ -127,6 +133,13 @@ export const techStackItems: TechStackItem[] = [
     status: "familiar",
   },
   {
+    name: "Next.js",
+    category: "frameworks-libraries",
+    key: "nextjs",
+    url: "https://nextjs.org/docs",
+    status: "familiar",
+  },
+  {
     name: "Laravel",
     category: "frameworks-libraries",
     key: "laravel",
@@ -194,6 +207,34 @@ export const techStackItems: TechStackItem[] = [
     category: "tools-environment",
     key: "linux",
     url: "https://www.kernel.org/doc/html/latest/",
+    status: "refining",
+  },
+  {
+    name: "VMware",
+    category: "ethical-hacking-tools",
+    key: "vmware",
+    url: "https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion",
+    status: "refining",
+  },
+  {
+    name: "VirtualBox",
+    category: "ethical-hacking-tools",
+    key: "virtualbox",
+    url: "https://www.virtualbox.org/wiki/Documentation",
+    status: "refining",
+  },
+  {
+    name: "pfSense",
+    category: "ethical-hacking-tools",
+    key: "pfsense",
+    url: "https://docs.netgate.com/pfsense/en/latest/",
+    status: "refining",
+  },
+  {
+    name: "Metasploitable Linux",
+    category: "ethical-hacking-tools",
+    key: "metasploitable",
+    url: "https://docs.rapid7.com/metasploit/metasploitable-2/",
     status: "refining",
   },
 ];

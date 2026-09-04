@@ -4,7 +4,8 @@ export type TechCategoryId =
   | "languages"
   | "web-scripting"
   | "frameworks-libraries"
-  | "tools-environment";
+  | "tools-environment"
+  | "ethical-hacking-tools";
 
 export interface TechStackCategory {
   id: TechCategoryId;
