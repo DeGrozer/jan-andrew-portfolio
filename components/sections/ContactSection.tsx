@@ -99,8 +99,8 @@ export function ContactSection() {
 
                 <div className="mt-8 flex flex-wrap items-center gap-6">
                     <button ref={cvButtonRef} type="button" onClick={() => setCvOpen(true)} className="contact-cv group inline-flex items-center gap-3">
-                    <span className="label-mono">VIEW CV</span>
-                    <span className="text-lg" aria-hidden="true">↗</span>
+                        <span className="label-mono">VIEW CV</span>
+                        <span className="text-lg" aria-hidden="true">↗</span>
                     </button>
                 </div>
             </div>
