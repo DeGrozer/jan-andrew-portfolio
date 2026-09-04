@@ -40,7 +40,7 @@ export function ContactSection() {
     return (
         <section
             id="contact"
-            className="container-editorial scroll-mt-24 pb-4 pt-24 md:pb-8 md:pt-32"
+            className="container-editorial scroll-mt-24 pb-4 pt-24 md:pb-8 md:pt-40"
             aria-labelledby="contact-heading"
         >
             <div className="section-intro contact-intro">
