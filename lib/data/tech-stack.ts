@@ -133,6 +133,13 @@ export const techStackItems: TechStackItem[] = [
     status: "familiar",
   },
   {
+    name: "React Native",
+    category: "frameworks-libraries",
+    key: "reactnative",
+    url: "https://reactnative.dev/docs/getting-started",
+    status: "familiar",
+  },
+  {
     name: "Next.js",
     category: "frameworks-libraries",
     key: "nextjs",
@@ -151,6 +158,20 @@ export const techStackItems: TechStackItem[] = [
     category: "tools-environment",
     key: "github",
     url: "https://docs.github.com/",
+    status: "familiar",
+  },
+  {
+    name: "Node.js",
+    category: "tools-environment",
+    key: "nodejs",
+    url: "https://nodejs.org/docs/latest/api/",
+    status: "familiar",
+  },
+  {
+    name: "npm",
+    category: "tools-environment",
+    key: "npm",
+    url: "https://docs.npmjs.com/",
     status: "familiar",
   },
   {
