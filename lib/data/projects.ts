@@ -79,7 +79,7 @@ export const selectedWorkProjects: PortfolioProject[] = [
       "OptiCCS: An Integrated System for Monitoring and Managing Computer and Laboratory Equipment for the College of Computer Studies",
     category: "FULL STACK WEB DEVELOPER · CAPSTONE PROJECT",
     description:
-      "Built a centralized lab management platform (PHP/CodeIgniter/MySQL) with real-time monitoring via Python WebSocket agent. Features include equipment inventory tracking, borrower management, remote command execution, violation detection, and live screenshot streaming.",
+      "Built a centralized lab management platform (PHP/CodeIgniter/MySQL) with a PHP Ratchet WebSocket server and Python client for real-time monitoring. Features include equipment inventory tracking, borrower management, remote command execution, violation detection, and live screenshot streaming.",
     stack: [
       { label: "PHP", key: "php" },
       { label: "CodeIgniter", key: "codeigniter" },
