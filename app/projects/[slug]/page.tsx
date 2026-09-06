@@ -31,9 +31,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     return (
         <main className="container-editorial py-20">
             <p className="label-mono">PROJECT / {project.number}</p>
-            <h1 className="headline-serif mt-6 text-5xl md:text-7xl">{project.name}</h1>
+            <h1 className="headline-serif mt-6 text-4xl md:text-6xl">{project.name}</h1>
             <p className="label-mono mt-4 text-[color:var(--muted)]">{project.category}</p>
-            <p className="mt-8 max-w-prose text-lg leading-relaxed">{project.description}</p>
+            <p className="mt-8 max-w-[47ch] text-lg leading-relaxed">{project.description}</p>
 
             {project.stack && project.stack.length > 0 && (
                 <div className="mt-12">

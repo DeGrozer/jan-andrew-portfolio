@@ -114,7 +114,7 @@ export function SelectedWorkSection() {
                     </p>
                     <h3
                       id={`${project.slug}-title`}
-                      className="headline-serif text-left text-3xl leading-[0.96] md:text-4xl xl:text-[3.35rem]"
+                      className="headline-serif text-left text-3xl leading-[0.96] md:text-4xl xl:text-[2.75rem]"
                     >
                       {project.title}
                     </h3>
@@ -131,7 +131,7 @@ export function SelectedWorkSection() {
                     )}
                   </div>
 
-                  <p className="max-w-[42ch] text-left text-sm leading-relaxed text-[color:var(--foreground)]/88 md:text-base">
+                  <p className="max-w-none text-left text-sm leading-relaxed text-[color:var(--foreground)]/88 md:text-base">
                     {project.description}
                   </p>
 
