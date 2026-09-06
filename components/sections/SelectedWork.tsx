@@ -184,8 +184,8 @@ export function SelectedWorkSection() {
                   ) : (
                     <div data-interactive-reveal={isReversed ? "left" : "right"} data-interactive-float className="group relative w-full">
                       {project.screenshots && project.screenshots.length > 0 ? (
-                        <ProjectScreenshotCarousel 
-                          screenshots={project.screenshots} 
+                        <ProjectScreenshotCarousel
+                          screenshots={project.screenshots}
                           projectName={project.slug}
                           liveUrl={project.liveUrl}
                           overlayLabel={project.slug === "opticcs" ? "VIEW DOCUMENTATION / MANUAL" : undefined}
