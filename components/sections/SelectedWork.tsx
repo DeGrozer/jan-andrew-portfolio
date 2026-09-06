@@ -82,14 +82,15 @@ export function SelectedWorkSection() {
       <div className="mt-12 space-y-12 md:mt-16 md:space-y-16">
         {selectedWorkProjects.map((project, index) => {
           const isReversed = index % 2 === 1;
+          const projectLiveUrl = project.slug === "eng-bakery" ? undefined : project.liveUrl;
           const ctaLabel = project.slug === "opticcs"
             ? "VIEW DOCUMENTATION / MANUAL"
-            : project.liveUrl
+            : projectLiveUrl
               ? "VISIT SITE"
               : project.githubUrl
                 ? "VIEW SOURCE"
                 : null;
-          const ctaHref = project.liveUrl ?? project.githubUrl;
+          const ctaHref = projectLiveUrl ?? project.githubUrl;
 
           return (
             <article
@@ -187,7 +188,7 @@ export function SelectedWorkSection() {
                         <ProjectScreenshotCarousel
                           screenshots={project.screenshots}
                           projectName={project.slug}
-                          liveUrl={project.liveUrl}
+                          liveUrl={projectLiveUrl}
                           overlayLabel={project.slug === "opticcs" ? "VIEW DOCUMENTATION / MANUAL" : undefined}
                         />
                       ) : (
@@ -209,15 +210,15 @@ export function SelectedWorkSection() {
         })}
       </div>
 
-      <div className="mt-20 flex flex-col items-center text-center md:mt-28">
-        <p className="text-[0.85rem] tracking-[0.12em] text-[color:var(--foreground)]/80 md:text-[1rem]">
+      <div className="mt-12 flex flex-col items-center text-center md:mt-16">
+        <p className="text-[1.05rem] tracking-[0.12em] text-[color:var(--foreground)]/80 md:text-[1.25rem]">
           Want to see what&apos;s under the hood?
         </p>
         <a
           href="https://github.com/degrozer"
           target="_blank"
           rel="noopener noreferrer"
-          className="group label-mono mt-5 inline-flex items-center gap-3 text-[1rem] text-[color:var(--foreground)] transition-colors hover:text-[color:var(--muted)] md:text-[1.8rem]"
+          className="group label-mono mt-5 inline-flex items-center gap-3 text-[1.3rem] text-[color:var(--foreground)] transition-colors hover:text-[color:var(--muted)] md:text-[2.4rem]"
           aria-label="Open Andrew Barte GitHub profile"
         >
           <span className="underline-offset-8 group-hover:underline">GITHUB.COM/DEGROZER</span>

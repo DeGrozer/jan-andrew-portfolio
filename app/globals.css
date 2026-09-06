@@ -1104,14 +1104,14 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
     backdrop-filter: blur(0px);
     opacity: 0;
     cursor: pointer;
-    transition: background-color 200ms ease, opacity 200ms ease;
+    transition: background-color 200ms ease, backdrop-filter 200ms ease, opacity 200ms ease;
     border: 1px solid var(--border);
   }
 
   .project-carousel-auto-overlay:hover,
   .project-carousel-auto-overlay:focus-visible {
     background: transparent;
-    backdrop-filter: none;
+    backdrop-filter: blur(5px);
     opacity: 1;
   }
 
