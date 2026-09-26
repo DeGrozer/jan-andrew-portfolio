@@ -117,4 +117,20 @@ export const selectedWorkProjects: PortfolioProject[] = [
     liveUrl: "https://degrozer.github.io/3dfivbranking/globe-lineart/",
     status: "wip",
   },
+  {
+    id: "philippine-geobase",
+    number: "06",
+    slug: "philippine-geobase",
+    name: "PHILIPPINE GEOBASE",
+    title: "Philippine GeoBase",
+    category: "OPEN SOURCE · GEOSPATIAL DATA · DEVELOPER TOOL",
+    description:
+      "An open-source geospatial foundation for the Philippines, providing reusable coordinate data and administrative boundary shapes that anyone can customize and build upon.",
+    stack: [
+      { label: "Open Source", key: "web" },
+      { label: "Interactive Map", key: "dataviz" },
+    ],
+    imageAlt: "Preview placeholder for Philippine GeoBase",
+    status: "wip",
+  },
 ];

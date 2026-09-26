@@ -125,9 +125,9 @@ export function SelectedWorkSection() {
                     <p className="label-mono text-left text-[0.68rem] tracking-[0.12em] text-[color:var(--foreground)]/75 md:text-[0.72rem]">
                       {project.category}
                     </p>
-                    {(project.slug === "3d-world-rankings" || project.slug === "volleywood") && (
+                    {project.status === "wip" && (
                       <span className="label-mono inline-block border border-[color:var(--focus)] bg-[color:var(--focus)]/10 px-1.5 py-0.5 text-[0.55rem] tracking-[0.1em] text-[color:var(--focus)]">
-                        WIP
+                        {project.slug === "barangay-atlas" ? "COMING SOON" : "WIP"}
                       </span>
                     )}
                   </div>
@@ -194,9 +194,13 @@ export function SelectedWorkSection() {
                       ) : (
                         <div className="flex aspect-[16/10] w-full items-center justify-center bg-[color:var(--surface)]/20 px-6 text-center" aria-label={project.imageAlt}>
                           <div>
-                            <p className="label-mono text-[0.7rem]">PROJECT VISUAL</p>
+                            <p className="label-mono text-[0.7rem]">
+                              {project.slug === "philippine-geobase" ? "COMING SOON" : "PROJECT VISUAL"}
+                            </p>
                             <p className="mt-3 text-sm text-[color:var(--muted)]">
-                              Screenshot placeholder ready for real asset.
+                              {project.slug === "philippine-geobase"
+                                ? "An interactive map of the Philippines is on the way."
+                                : "Screenshot placeholder ready for real asset."}
                             </p>
                           </div>
                         </div>
