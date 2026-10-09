@@ -27,30 +27,8 @@ export const selectedWorkProjects: PortfolioProject[] = [
     status: "active",
   },
   {
-    id: "volleywood",
-    number: "02",
-    slug: "volleywood",
-    name: "VOLLEYWOOD",
-    title: "VOLLEYWOOD",
-    category: "VOLLEYBALL CONTENT AND MEDIA PLATFORM",
-    description:
-      "A volleyball-focused website and content management platform built and maintained with WordPress, featuring editorial content, structured navigation, and a customized user experience.",
-    stack: [
-      { label: "WordPress", key: "wordpress" },
-      { label: "CMS", key: "cms" },
-      { label: "UI/UX", key: "uiux" },
-      { label: "Web Development", key: "web" },
-    ],
-    screenshots: [
-      { src: "/images/projects/volleywood/landing.webp", alt: "landing page of Volleywood" }
-    ],
-    imageAlt: "Placeholder panel for ASOG TBI project screenshot",
-    liveUrl: "https://volleywood.net",
-    status: "wip",
-  },
-  {
     id: "eng-bakery",
-    number: "03",
+    number: "02",
     slug: "eng-bakery",
     name: "ENG BAKERY",
     title: "EnG BAKERY",
@@ -72,7 +50,7 @@ export const selectedWorkProjects: PortfolioProject[] = [
   },
   {
     id: "opticcs",
-    number: "04",
+    number: "03",
     slug: "opticcs",
     name: "OPTICCS",
     title:
@@ -97,7 +75,7 @@ export const selectedWorkProjects: PortfolioProject[] = [
   },
   {
     id: "fivb-3d-rankings",
-    number: "05",
+    number: "04",
     slug: "3d-world-rankings",
     name: "3D WORLD RANKINGS",
     title: "3D INTERACTIVE FIVB WORLD RANKING",
@@ -119,7 +97,7 @@ export const selectedWorkProjects: PortfolioProject[] = [
   },
   {
     id: "philippine-geobase",
-    number: "06",
+    number: "05",
     slug: "philippine-geobase",
     name: "PHILIPPINE GEOBASE",
     title: "Philippine GeoBase",
@@ -130,7 +108,11 @@ export const selectedWorkProjects: PortfolioProject[] = [
       { label: "Open Source", key: "web" },
       { label: "Interactive Map", key: "dataviz" },
     ],
+    screenshots: [
+      { src: "/images/projects/geobase/gebase.png", alt: "Philippine GeoBase map interface" },
+    ],
     imageAlt: "Preview placeholder for Philippine GeoBase",
+    liveUrl: "https://map-maqvxxbyp-degrozers-projects.vercel.app/",
     status: "wip",
   },
 ];

@@ -174,7 +174,7 @@ export function SelectedWorkSection() {
                           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100">
                             <div className="absolute bottom-4 left-4 md:bottom-5 md:left-5">
                               <span className="label-mono inline-flex items-center gap-2 border border-white/25 bg-white/10 px-3 py-2 text-[0.58rem] tracking-[0.16em] text-white backdrop-blur-[2px]">
-                                VIEW DOCUMENTATION / MANUAL
+                                {ctaLabel ?? "VISIT SITE"}
                                 <span aria-hidden="true">↗</span>
                               </span>
                             </div>
@@ -192,18 +192,36 @@ export function SelectedWorkSection() {
                           overlayLabel={project.slug === "opticcs" ? "VIEW DOCUMENTATION / MANUAL" : undefined}
                         />
                       ) : (
-                        <div className="flex aspect-[16/10] w-full items-center justify-center bg-[color:var(--surface)]/20 px-6 text-center" aria-label={project.imageAlt}>
-                          <div>
-                            <p className="label-mono text-[0.7rem]">
-                              {project.slug === "philippine-geobase" ? "COMING SOON" : "PROJECT VISUAL"}
-                            </p>
-                            <p className="mt-3 text-sm text-[color:var(--muted)]">
-                              {project.slug === "philippine-geobase"
-                                ? "An interactive map of the Philippines is on the way."
-                                : "Screenshot placeholder ready for real asset."}
-                            </p>
+                        <a
+                          href={projectLiveUrl ?? undefined}
+                          target={projectLiveUrl ? "_blank" : undefined}
+                          rel={projectLiveUrl ? "noopener noreferrer" : undefined}
+                          className={projectLiveUrl ? "group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--focus)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--background)]" : "block"}
+                          aria-label={projectLiveUrl ? `${ctaLabel ?? "Open project"} for ${project.title}` : project.imageAlt}
+                        >
+                          <div className="relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden bg-[color:var(--surface)]/20 px-6 text-center">
+                            <div>
+                              <p className="label-mono text-[0.7rem]">
+                                {project.slug === "philippine-geobase" ? "VIEW SITE" : "PROJECT VISUAL"}
+                              </p>
+                              <p className="mt-3 text-sm text-[color:var(--muted)]">
+                                {project.slug === "philippine-geobase"
+                                  ? "Explore the interactive map of the Philippines."
+                                  : "Screenshot placeholder ready for real asset."}
+                              </p>
+                            </div>
+                            {projectLiveUrl ? (
+                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
+                                <div className="absolute bottom-4 left-4 md:bottom-5 md:left-5">
+                                  <span className="label-mono inline-flex items-center gap-2 border border-white/25 bg-white/10 px-3 py-2 text-[0.58rem] tracking-[0.16em] text-white backdrop-blur-[2px]">
+                                    VISIT SITE
+                                    <span aria-hidden="true">↗</span>
+                                  </span>
+                                </div>
+                              </div>
+                            ) : null}
                           </div>
-                        </div>
+                        </a>
                       )}
                     </div>
                   )}
