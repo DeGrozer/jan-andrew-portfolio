@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { siteProfile } from "@/lib/data/site";
 import Link from "next/link";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { MapPin } from "lucide-react";
 
 const socialIconMap = {
     github: FaGithub,
@@ -242,15 +243,21 @@ export function HeroSection() {
                                     );
                                 })}
                             </ul>
-                            <p data-interactive-reveal className="label-mono">{siteProfile.location}</p>
+                            <p data-interactive-reveal className="hero-location label-mono">
+                                <MapPin className="hero-location-icon" size={13} strokeWidth={1.7} aria-hidden="true" />
+                                <span>{siteProfile.location}</span>
+                            </p>
                         </div>
                     </div>
 
                     <div className="pointer-events-none absolute bottom-[max(1.75rem,env(safe-area-inset-bottom))] left-1/2 z-20 -translate-x-1/2 text-center md:bottom-8">
                         <Link
                             href="/#selected-work"
-                            className="pointer-events-auto inline-flex pb-2"
+                            className="hero-scroll-cue pointer-events-auto inline-flex flex-col items-center gap-2 pb-2"
                         >
+                            <span className="hero-scroll-oval" aria-hidden="true">
+                                <span className="hero-scroll-oval-dot" />
+                            </span>
                             <span className="label-mono text-[0.62rem] tracking-[0.18em]">{siteProfile.scrollLabel}</span>
                         </Link>
                     </div>

@@ -2,9 +2,9 @@ import type { SiteProfile } from "@/lib/types/content";
 
 export const siteProfile: SiteProfile = {
     name: "ANDREW BARTE",
-    tagline: "Developer / Builder / Still figuring it out.",
-    location: "BASED IN BICOL, PHILIPPINES",
-    scrollLabel: "SCROLL TO EXPLORE",
+    tagline: "Developer building useful web experiences, systems, and visual tools.",
+    location: "BASED IN BICOL / MAKATI, PHILIPPINES",
+    scrollLabel: "SCROLL TO VIEW SELECTED WORK",
     navigation: [
         { label: "01 / SELECTED WORK", href: "/#selected-work" },
         { label: "02 / TECH STACK", href: "/#tech-stack" },
