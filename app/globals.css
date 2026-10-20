@@ -95,6 +95,77 @@ section {
   display: none;
 }
 
+.hero-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hero-location-icon {
+  color: var(--focus);
+  flex: 0 0 auto;
+}
+
+.hero-scroll-cue {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.hero-scroll-oval {
+  position: relative;
+  display: block;
+  width: 1.15rem;
+  height: 2rem;
+  border: 1px solid color-mix(in oklab, var(--foreground), transparent 35%);
+  border-radius: 999px;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.hero-scroll-oval-dot {
+  position: absolute;
+  top: 0.35rem;
+  left: 50%;
+  width: 0.24rem;
+  height: 0.24rem;
+  border-radius: 999px;
+  background: var(--focus);
+  transform: translateX(-50%);
+  animation: hero-scroll-dot 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@keyframes hero-scroll-dot {
+  0%,
+  15% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+
+  28% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+    transform: translate(-50%, 0.92rem);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 1.18rem);
+  }
+}
+
+.hero-scroll-cue:hover .hero-scroll-oval,
+.hero-scroll-cue:focus-visible .hero-scroll-oval {
+  border-color: var(--focus);
+  transform: translateY(-0.15rem);
+}
+
+.hero-scroll-cue:hover .hero-scroll-oval-dot,
+.hero-scroll-cue:focus-visible .hero-scroll-oval-dot {
+  animation-duration: 1.25s;
+}
+
 html[data-theme="dark"] .interactive-cursor {
   border-color: var(--accent);
 }
@@ -1510,6 +1581,12 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
   .tech-marquee-track {
     animation: none !important;
     transform: none !important;
+  }
+
+  .hero-scroll-oval-dot {
+    animation: none;
+    opacity: 1;
+    transform: translate(-50%, 0.12rem);
   }
 
   .tech-marquee-sequence:nth-child(2),

@@ -6,3 +6,9 @@ dist/
 *.log
 .env*
 !.env.example
+
+# Local AI agent tooling
+.agents/
+.claude/
+.codex/
+.cursor/
