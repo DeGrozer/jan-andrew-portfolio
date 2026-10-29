@@ -940,18 +940,19 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
 
   .project-heading-lockup {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 0.9rem;
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    gap: 0.8rem;
     align-items: start;
   }
 
   .project-index {
     color: var(--focus);
-    font-family: var(--font-cormorant), serif;
-    font-size: clamp(2.4rem, 5vw, 4.5rem);
-    font-style: italic;
-    line-height: 0.76;
-    letter-spacing: -0.06em;
+    font-family: var(--font-ibm-plex-mono), monospace;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    padding-top: 0.12rem;
   }
 
   .project-tags {
