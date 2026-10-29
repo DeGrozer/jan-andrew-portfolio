@@ -48,16 +48,16 @@ export function ContactSection() {
                     <h2 data-interactive-reveal id="contact-heading" className="section-heading headline-serif text-left text-6xl md:text-8xl">
                         Connect.
                     </h2>
-                    <p className="mt-4 max-w-[42ch] text-left text-sm leading-relaxed text-[color:var(--muted)] md:text-base">
-                        I’m usually somewhere between a half-finished idea, an overthought edit, and a question that refused to leave me alone.
-                    </p>
                 </div>
             </div>
 
-            <div className="mt-6 pt-2 md:mt-8">
-                <div className="flex flex-wrap items-center justify-between gap-6">
-                    <p className="label-mono">FIND ME ELSEWHERE</p>
-                    <div className="flex flex-wrap gap-3">
+            <div className="contact-directory mt-10 pt-2 md:mt-14">
+                <div className="contact-groups">
+                    <div className="contact-group">
+                        <div>
+                            <p className="label-mono">PROFESSIONAL</p>
+                        </div>
+                        <div className="contact-links">
                         <a href="mailto:janandrewbarte@gmail.com" className="contact-social contact-social--email" aria-label="Email Jan Andrew Barte" title="Email">
                             <FaEnvelope aria-hidden="true" />
                             <span className="label-mono">EMAIL</span>
@@ -70,6 +70,14 @@ export function ContactSection() {
                             <FaLinkedinIn aria-hidden="true" />
                             <span className="label-mono">LINKEDIN</span>
                         </a>
+                        </div>
+                    </div>
+
+                    <div className="contact-group">
+                        <div>
+                            <p className="label-mono">PERSONAL</p>
+                        </div>
+                        <div className="contact-links">
                         <a href="https://www.facebook.com/janandrew.barte" target="_blank" rel="noopener noreferrer" className="contact-social contact-social--facebook" aria-label="Open Facebook profile" title="Facebook">
                             <SiFacebook aria-hidden="true" />
                             <span className="label-mono">FACEBOOK</span>
@@ -94,13 +102,17 @@ export function ContactSection() {
                             <FaCodepen aria-hidden="true" />
                             <span className="label-mono">CODEPEN</span>
                         </a>
+                        </div>
                     </div>
                 </div>
 
-                <div className="mt-8 flex flex-wrap items-center gap-6">
+                <div className="contact-cv-row">
+                    <div>
+                        <p className="label-mono">CURRICULUM VITAE</p>
+                    </div>
                     <button ref={cvButtonRef} type="button" onClick={() => setCvOpen(true)} className="contact-cv group inline-flex items-center gap-3">
-                        <span className="label-mono">VIEW CV</span>
-                        <span className="text-lg" aria-hidden="true">↗</span>
+                        <span>READ THE CV</span>
+                        <span aria-hidden="true">↗</span>
                     </button>
                 </div>
             </div>
@@ -108,8 +120,11 @@ export function ContactSection() {
             {cvOpen && mounted && createPortal(
                 <div className="cv-modal-backdrop" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && setCvOpen(false)}>
                     <div ref={cvDialogRef} className="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title" tabIndex={-1}>
-                        <div className="flex items-center justify-between gap-4">
-                            <h3 id="cv-modal-title" className="headline-serif text-3xl">Curriculum Vitae</h3>
+                        <div className="cv-modal-header">
+                            <div>
+                                <p className="label-mono">JAN ANDREW BARTE / DOCUMENT 01</p>
+                                <h3 id="cv-modal-title" className="headline-serif text-3xl">Curriculum Vitae</h3>
+                            </div>
                             <button type="button" className="cv-modal-close label-mono" onClick={() => setCvOpen(false)} aria-label="Close CV preview">CLOSE</button>
                         </div>
                         <iframe className="cv-modal-preview" src="/Barte%20-%20Resume/Jan%20Andrew%20Barte%20-%20Resum%C3%A9.pdf" title="Jan Andrew Barte curriculum vitae" />

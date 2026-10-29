@@ -3,7 +3,6 @@ import { FloatingControls } from "@/components/ui/FloatingControls";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { InteractiveCursor } from "@/components/ui/InteractiveCursor";
 import { InteractiveMotion } from "@/components/ui/InteractiveMotion";
-import { EasterEggs } from "@/components/ui/EasterEggs";
 
 export function SiteShell({ children }: PropsWithChildren) {
     return (
@@ -18,7 +17,6 @@ export function SiteShell({ children }: PropsWithChildren) {
             <FloatingControls />
             <InteractiveCursor />
             <InteractiveMotion />
-            <EasterEggs />
             <main id="main-content">{children}</main>
         </>
     );

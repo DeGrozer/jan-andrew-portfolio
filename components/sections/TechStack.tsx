@@ -132,7 +132,7 @@ export function TechStackSection() {
       <div className="section-intro">
         <div>
           <h2 data-interactive-reveal id="tech-stack-heading" className="section-heading headline-serif text-5xl md:text-7xl">
-            Things I use to build.
+            The tools.
           </h2>
           <p data-interactive-reveal className="mx-auto mt-4 max-w-[48ch] text-base leading-relaxed text-[color:var(--foreground)]/88 md:text-lg">
             A working set of technologies I&apos;ve used in projects. Some are familiar;

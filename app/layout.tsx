@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Instrument_Serif, IBM_Plex_Mono, Manrope } from "next/font/google";
+import { Cormorant_Garamond, IBM_Plex_Mono, Work_Sans } from "next/font/google";
 import "./globals.css";
 
-const instrumentSerif = Instrument_Serif({
-    variable: "--font-instrument-serif",
-    weight: "400",
+const cormorantGaramond = Cormorant_Garamond({
+    variable: "--font-cormorant",
+    weight: ["400", "500", "600"],
     subsets: ["latin"],
     display: "swap",
 });
 
-const manrope = Manrope({
-    variable: "--font-manrope",
+const workSans = Work_Sans({
+    variable: "--font-work-sans",
+    weight: ["400", "500", "600"],
     subsets: ["latin"],
     display: "swap",
 });
@@ -26,7 +27,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
     title: "Andrew Barte | Portfolio",
     description:
-        "Developer / Builder / Still figuring it out. Personal portfolio of Andrew Barte.",
+        "Portfolio of Andrew Barte, a developer building useful web experiences, systems, and visual tools.",
 };
 
 export default function RootLayout({
@@ -35,7 +36,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${instrumentSerif.variable} ${manrope.variable} ${ibmPlexMono.variable}`}
+                className={`${cormorantGaramond.variable} ${workSans.variable} ${ibmPlexMono.variable}`}
             >
                 {children}
             </body>

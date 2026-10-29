@@ -70,7 +70,7 @@ export function SelectedWorkSection() {
       <div className="section-intro">
         <div>
           <h2 data-interactive-reveal id="selected-work-heading" className="section-heading headline-serif text-5xl md:text-7xl">
-            Things I&apos;ve built.
+            Selected work.
           </h2>
           <p data-interactive-reveal className="mx-auto mt-4 max-w-[48ch] text-base leading-relaxed text-[color:var(--foreground)]/88 md:text-lg">
             Selected products, systems, and experiments built through school, freelance
@@ -115,7 +115,7 @@ export function SelectedWorkSection() {
                     </p>
                     <h3
                       id={`${project.slug}-title`}
-                      className="headline-serif text-left text-3xl leading-[0.96] md:text-4xl xl:text-[2.75rem]"
+                      className={`headline-serif text-left text-3xl leading-[0.96] md:text-4xl xl:text-[2.75rem] ${project.slug === "opticcs" ? "selected-work-title--long" : ""}`}
                     >
                       {project.title}
                     </h3>

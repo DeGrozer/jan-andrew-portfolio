@@ -33,7 +33,7 @@ export default function HomePage() {
                             <span className="interactive-word">Andrew.</span>
                         </h2>
 
-                        <div data-interactive-reveal className="mt-10 space-y-6 text-lg leading-relaxed text-[color:var(--foreground)]/85 md:text-lg lg:text-xl">
+                        <div data-interactive-reveal className="readable-copy mt-10 space-y-6 text-lg leading-relaxed text-[color:var(--foreground)]/85 md:text-lg lg:text-xl">
                             <p>
                                 I&apos;m a developer and builder who enjoys translating ideas into <span className="interactive-word">clean, useful digital experiences.</span> My work sits at the intersection of <span className="interactive-word">design, front-end craft,</span> and practical problem-solving, whether I&apos;m building an interface, a system, or a visual story around data.
                             </p>

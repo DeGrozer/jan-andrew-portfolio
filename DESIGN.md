@@ -12,19 +12,19 @@ Experience. The landing page should make the work feel worth exploring while kee
 
 ## First Viewport
 
-The identity leads: Andrew Barte's name, role, social proof, and Bicol location are centered in the opening. A small location-pin icon makes place legible without becoming a decorative badge. The selected-work invitation is a quiet oval cue at the bottom of the viewport.
+The identity leads: Andrew Barte's name, role, social proof, and Bicol location are centered in the opening. A small location-pin icon makes place legible without becoming a decorative badge. The selected-work invitation is a quiet mouse-shaped cue with a single moving dot at the bottom of the viewport.
 
 ## Interaction Grammar
 
-- The oval scroll cue remains still at rest and responds only to hover or keyboard focus.
-- Its dot travels within the oval rather than using a looping animation.
+- The scroll cue uses a small mouse outline with a single dot and restrained downward drift.
+- Its movement points toward selected work without becoming a decorative focal point.
 - Motion should support discovery and hierarchy, not compete with project evidence.
 - Reduced-motion users receive the same structure and actions without authored movement.
 
 ## Typography
 
-- Instrument Serif carries identity and section headlines.
-- Manrope carries readable body copy and interface text.
+- Cormorant Garamond carries identity and section headlines with a literary, print-rooted voice.
+- Work Sans carries readable body copy and interface text with a practical, human rhythm.
 - IBM Plex Mono carries metadata, labels, navigation, and measured details.
 
 ## Color and Material
@@ -33,6 +33,7 @@ The identity leads: Andrew Barte's name, role, social proof, and Bicol location 
 - Ink-dark foreground provides hierarchy and contrast.
 - Focus red is reserved for interactive emphasis, location, and selected states.
 - Borders remain fine and editorial; avoid decorative card chrome.
+- Professional and personal contact links are separate groups, with the CV presented as a document rather than a generic CTA card.
 
 ## Quality Bar
 

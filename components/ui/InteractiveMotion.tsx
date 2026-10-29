@@ -49,7 +49,7 @@ export function InteractiveMotion() {
                         scrollTrigger: {
                             trigger: element,
                             start: "top 60%",
-                            once: true,
+                            toggleActions: "play reverse play reverse",
                         },
                     });
                 });
@@ -76,7 +76,7 @@ export function InteractiveMotion() {
                         scrollTrigger: {
                             trigger: element,
                             start: "top 60%",
-                            once: true,
+                            toggleActions: "play reverse play reverse",
                         },
                     });
                 });
@@ -91,7 +91,7 @@ export function InteractiveMotion() {
                         scrollTrigger: {
                             trigger: element,
                             start: "top 60%",
-                            once: true,
+                            toggleActions: "play reverse play reverse",
                         },
                     });
                 });
@@ -108,7 +108,7 @@ export function InteractiveMotion() {
                             scrollTrigger: {
                                 trigger: element.closest("[data-interactive-reveal]") ?? element,
                                 start: "top 70%",
-                                once: true,
+                                toggleActions: "play reverse play reverse",
                             },
                         },
                     );
@@ -125,7 +125,7 @@ export function InteractiveMotion() {
                             scrollTrigger: {
                                 trigger: element.closest("[data-interactive-reveal]") ?? element,
                                 start: "top 70%",
-                                once: true,
+                                toggleActions: "play reverse play reverse",
                             },
                         },
                     );
@@ -208,8 +208,9 @@ export function InteractiveMotion() {
                                 scrollTrigger: {
                                     trigger: entry,
                                     start: "center center",
-                                    once: true,
+                                    toggleActions: "play reverse play reverse",
                                     onEnter: () => entry.classList.add("is-active"),
+                                    onLeaveBack: () => entry.classList.remove("is-active"),
                                 },
                             },
                         );

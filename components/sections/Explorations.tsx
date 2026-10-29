@@ -2,7 +2,7 @@ export function ExplorationsSection() {
     return (
         <section id="explorations" className="container-editorial min-h-[calc(100svh-5rem)] scroll-mt-24 pb-16 pt-16 md:pb-24 md:pt-24" aria-labelledby="explorations-heading">
             <div className="section-intro mb-6 md:mb-8">
-                <h2 data-interactive-reveal id="explorations-heading" className="section-heading headline-serif text-5xl md:text-7xl"><span className="exploration-heading-word">Other</span>{" "}<span className="exploration-heading-word">things</span>{" "}<span className="exploration-heading-word">I</span>{" "}<span className="exploration-heading-word">like.</span></h2>
+                <h2 data-interactive-reveal id="explorations-heading" className="section-heading headline-serif text-5xl md:text-7xl"><span className="exploration-heading-word">Other things I like.</span></h2>
             </div>
 
             <div className="editorial-essay-block mt-2 md:mt-3">

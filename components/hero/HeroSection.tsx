@@ -200,7 +200,7 @@ export function HeroSection() {
                 <div className="container-editorial relative h-full">
                     <div className="absolute inset-0 grid place-items-center px-2">
                         <div className="relative z-10 flex max-w-[34rem] flex-col items-center gap-6 px-2 text-center md:gap-7">
-                            <h1 data-interactive-reveal className="headline-serif text-[clamp(3rem,9vw,8.4rem)]">
+                            <h1 data-interactive-reveal className="headline-serif hero-title">
                                 {siteProfile.name}
                             </h1>
                             <p data-interactive-reveal className="max-w-[32ch] text-[clamp(1rem,1.8vw,1.42rem)] leading-snug text-[color:var(--foreground)]">
@@ -254,11 +254,18 @@ export function HeroSection() {
                         <Link
                             href="/#selected-work"
                             className="hero-scroll-cue pointer-events-auto inline-flex flex-col items-center gap-2 pb-2"
+                            onClick={(event) => {
+                                const target = document.getElementById("selected-work");
+                                if (!target) return;
+
+                                event.preventDefault();
+                                target.scrollIntoView({ behavior: "smooth", block: "start" });
+                            }}
                         >
-                            <span className="hero-scroll-oval" aria-hidden="true">
-                                <span className="hero-scroll-oval-dot" />
+                            <span className="hero-scroll-mouse" aria-hidden="true">
+                                <span className="hero-scroll-dot" />
                             </span>
-                            <span className="label-mono text-[0.62rem] tracking-[0.18em]">{siteProfile.scrollLabel}</span>
+                            <span className="label-mono text-[0.54rem] tracking-[0.16em]">{siteProfile.scrollLabel}</span>
                         </Link>
                     </div>
 
