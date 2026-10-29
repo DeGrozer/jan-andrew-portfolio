@@ -12,3 +12,8 @@ dist/
 .claude/
 .codex/
 .cursor/
+
+# Impeccable project context
+DESIGN.md
+PRODUCT.md
+.impeccable/
