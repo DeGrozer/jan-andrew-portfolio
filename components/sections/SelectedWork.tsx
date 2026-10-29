@@ -11,7 +11,6 @@ import {
   SiReact,
   SiTailwindcss,
   SiThreedotjs,
-  SiWebcomponentsdotorg,
   SiWordpress,
 } from "react-icons/si";
 import { selectedWorkProjects } from "@/lib/data/projects";
@@ -30,29 +29,54 @@ const stackIconMap: Record<string, IconType> = {
   react: SiReact,
   tailwind: SiTailwindcss,
   css: SiCss,
-  web: SiWebcomponentsdotorg,
-  websocket: SiWebcomponentsdotorg,
-  dataviz: SiWebcomponentsdotorg,
-  webgl: SiWebcomponentsdotorg,
-  wip: SiWebcomponentsdotorg,
-  cms: SiWebcomponentsdotorg,
-  uiux: SiWebcomponentsdotorg,
+};
+
+const stackHrefMap: Record<string, string> = {
+  php: "https://www.php.net/",
+  codeigniter: "https://codeigniter.com/",
+  gsap: "https://gsap.com/",
+  "three.js": "https://threejs.org/",
+  wordpress: "https://wordpress.org/",
+  mysql: "https://www.mysql.com/",
+  javascript: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  python: "https://www.python.org/",
+  react: "https://react.dev/",
+  tailwind: "https://tailwindcss.com/",
+  css: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  websocket: "https://developer.mozilla.org/en-US/docs/Web/API/WebSocket",
 };
 
 function ProjectStack({ items }: { items: PortfolioProject["stack"] }) {
   return (
-    <ul className="flex flex-wrap items-center gap-2.5 text-[color:var(--foreground)]/90">
+    <ul className="project-stack" aria-label="Technologies used">
       {items.map((item) => {
         const Icon = stackIconMap[item.key.toLowerCase()] ?? null;
+        const href = stackHrefMap[item.key.toLowerCase()];
+        const content = (
+          <>
+            {Icon ? <Icon className="project-stack-icon" aria-hidden="true" /> : null}
+            <span>{item.label}</span>
+          </>
+        );
 
         return (
-          <li
-            key={`${item.label}-${item.key}`}
-            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-[color:var(--background)]/70 px-2.5 py-1.5 text-[0.62rem] tracking-[0.08em] text-[color:var(--foreground)]/80 md:text-[0.7rem]"
-            title={item.label}
-          >
-            {Icon ? <Icon className="h-3.5 w-3.5 shrink-0" aria-hidden="true" /> : null}
-            <span>{item.label}</span>
+          <li key={`${item.label}-${item.key}`}>
+            {href ? (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-stack-link"
+                title={`Visit ${item.label}`}
+                aria-label={`Visit ${item.label} official website`}
+              >
+                {content}
+              </a>
+            ) : (
+              <span className="project-stack-link project-stack-link--static" title={item.label}>
+                {content}
+              </span>
+            )}
           </li>
         );
       })}

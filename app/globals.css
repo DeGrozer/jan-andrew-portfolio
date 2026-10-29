@@ -931,6 +931,44 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
   .contact-social--codepen:hover,
   .contact-social--codepen:focus-visible { color: #000; border-color: #000; }
 
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 1.15rem;
+    color: var(--muted);
+  }
+
+  .project-stack-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.25rem;
+    color: inherit;
+    font-family: var(--font-ibm-plex-mono), monospace;
+    font-size: 0.67rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  }
+
+  .project-stack-link:hover,
+  .project-stack-link:focus-visible {
+    border-color: var(--focus);
+    color: var(--foreground);
+    transform: translateY(-1px);
+  }
+
+  .project-stack-link--static {
+    cursor: default;
+  }
+
+  .project-stack-icon {
+    width: 0.95rem;
+    height: 0.95rem;
+    flex: 0 0 auto;
+  }
+
   .education-timeline-track {
     position: relative;
     padding-left: 1.8rem;
