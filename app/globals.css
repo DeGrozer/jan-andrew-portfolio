@@ -109,53 +109,25 @@ section {
 .hero-scroll-cue {
   color: var(--foreground);
   text-decoration: none;
+  transition: color 180ms ease;
 }
 
-.hero-scroll-mouse {
-  position: relative;
-  display: block;
-  width: 0.95rem;
-  height: 1.6rem;
-  border: 0.75px solid color-mix(in oklab, var(--foreground), transparent 35%);
-  border-radius: 999px;
-  transition: border-color 180ms ease, transform 180ms ease;
+.hero-scroll-label {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  color: color-mix(in oklab, var(--foreground), transparent 38%);
+  transition: color 180ms ease;
 }
 
-.hero-scroll-dot {
-  position: absolute;
-  top: 0.28rem;
-  left: 50%;
-  width: 0.16rem;
-  height: 0.32rem;
-  border-radius: 999px;
-  background: var(--focus);
-  transform: translateX(-50%);
-  animation: hero-scroll-dot 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
-  transition: opacity 180ms ease;
+.hero-scroll-cue:hover,
+.hero-scroll-cue:focus-visible {
+  color: var(--focus);
 }
 
-@keyframes hero-scroll-dot {
-  0% {
-    opacity: 0.35;
-    transform: translate(-50%, 0);
-  }
-
-  70%,
-  100% {
-    opacity: 1;
-    transform: translate(-50%, 0.55rem);
-  }
-}
-
-.hero-scroll-cue:hover .hero-scroll-mouse,
-.hero-scroll-cue:focus-visible .hero-scroll-mouse {
-  border-color: var(--focus);
-  transform: translateY(-0.1rem);
-}
-
-.hero-scroll-cue:hover .hero-scroll-dot,
-.hero-scroll-cue:focus-visible .hero-scroll-dot {
-  opacity: 0.72;
+.hero-scroll-cue:hover .hero-scroll-label,
+.hero-scroll-cue:focus-visible .hero-scroll-label {
+  color: var(--focus);
 }
 
 .readable-copy,
@@ -1755,12 +1727,6 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
   .tech-marquee-track {
     animation: none !important;
     transform: none !important;
-  }
-
-  .hero-scroll-dot {
-    animation: none;
-    opacity: 1;
-    transform: translate(-50%, 0.15rem);
   }
 
   .tech-marquee-sequence:nth-child(2),

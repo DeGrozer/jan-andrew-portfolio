@@ -262,9 +262,7 @@ export function HeroSection() {
                                 target.scrollIntoView({ behavior: "smooth", block: "start" });
                             }}
                         >
-                            <span className="hero-scroll-mouse" aria-hidden="true">
-                                <span className="hero-scroll-dot" />
-                            </span>
+                            <span className="hero-scroll-label label-mono">SCROLL TO EXPLORE</span>
                         </Link>
                     </div>
 
