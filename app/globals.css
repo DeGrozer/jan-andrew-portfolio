@@ -954,13 +954,6 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
     letter-spacing: -0.06em;
   }
 
-  .project-name {
-    margin-bottom: 0.45rem;
-    color: var(--muted);
-    font-size: 0.62rem;
-    letter-spacing: 0.16em;
-  }
-
   .project-tags {
     color: var(--muted);
     font-size: 0.62rem;

@@ -9,6 +9,7 @@ import {
   SiPhp,
   SiPython,
   SiReact,
+  SiSocket,
   SiTailwindcss,
   SiThreedotjs,
   SiWordpress,
@@ -26,6 +27,7 @@ const stackIconMap: Record<string, IconType> = {
   mysql: SiMysql,
   javascript: SiJavascript,
   python: SiPython,
+  websocket: SiSocket,
   react: SiReact,
   tailwind: SiTailwindcss,
   css: SiCss,
@@ -110,6 +112,7 @@ export function SelectedWorkSection() {
       <div className="mt-12 space-y-12 md:mt-16 md:space-y-16">
         {selectedWorkProjects.map((project, index) => {
           const isReversed = index % 2 === 1;
+          const projectNumber = String(index + 1).padStart(2, "0");
           const projectLiveUrl = project.slug === "eng-bakery" ? undefined : project.liveUrl;
           const ctaLabel = project.slug === "opticcs"
             ? "VIEW DOCUMENTATION / MANUAL"
@@ -139,16 +142,15 @@ export function SelectedWorkSection() {
                 >
                   <div className="project-heading-lockup">
                     <div className="project-index" aria-hidden="true">
-                      {project.number}
+                      {projectNumber}
                     </div>
                     <div className="min-w-0">
-                      <p className="project-name label-mono text-left">{project.name}</p>
-                    <h3
-                      id={`${project.slug}-title`}
-                      className={`headline-serif text-left text-3xl leading-[0.96] md:text-4xl xl:text-[2.75rem] ${project.slug === "opticcs" ? "selected-work-title--long" : ""}`}
-                    >
-                      {project.title}
-                    </h3>
+                      <h3
+                        id={`${project.slug}-title`}
+                        className={`headline-serif text-left text-3xl leading-[0.96] md:text-4xl xl:text-[2.75rem] ${project.slug === "opticcs" ? "selected-work-title--long" : ""}`}
+                      >
+                        {project.title}
+                      </h3>
                     </div>
                   </div>
 
