@@ -47,6 +47,10 @@ const stackHrefMap: Record<string, string> = {
 };
 
 function ProjectStack({ items }: { items: PortfolioProject["stack"] }) {
+  if (items.length === 0) {
+    return null;
+  }
+
   return (
     <ul className="project-stack" aria-label="Technologies used">
       {items.map((item) => {
@@ -133,16 +137,19 @@ export function SelectedWorkSection() {
                   data-interactive-reveal={isReversed ? "right" : "left"}
                   className="space-y-4 md:pr-4 xl:pr-6"
                 >
-                  <div className="space-y-2">
-                    <p className="label-mono text-left">
-                      {project.number} / {project.name}
-                    </p>
+                  <div className="project-heading-lockup">
+                    <div className="project-index" aria-hidden="true">
+                      {project.number}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="project-name label-mono text-left">{project.name}</p>
                     <h3
                       id={`${project.slug}-title`}
                       className={`headline-serif text-left text-3xl leading-[0.96] md:text-4xl xl:text-[2.75rem] ${project.slug === "opticcs" ? "selected-work-title--long" : ""}`}
                     >
                       {project.title}
                     </h3>
+                    </div>
                   </div>
 
                   <div className="flex items-center gap-2">
@@ -160,12 +167,16 @@ export function SelectedWorkSection() {
                     {project.description}
                   </p>
 
-                  <div className="space-y-3">
-                    <p className="label-mono text-left text-[0.62rem] tracking-[0.12em] text-[color:var(--foreground)]/75">
-                      STACK
-                    </p>
-                    <ProjectStack items={project.stack} />
-                  </div>
+                  {project.stack.length > 0 || project.tags?.length ? (
+                    <div className="space-y-3">
+                      {project.stack.length > 0 ? <ProjectStack items={project.stack} /> : null}
+                      {project.tags?.length ? (
+                        <p className="project-tags label-mono text-left">
+                          {project.tags.join(" · ")}
+                        </p>
+                      ) : null}
+                    </div>
+                  ) : null}
 
                 </div>
               </div>

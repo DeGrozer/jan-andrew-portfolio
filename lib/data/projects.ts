@@ -84,10 +84,8 @@ export const selectedWorkProjects: PortfolioProject[] = [
       "A passion project and work in progress that visualizes FIVB volleyball world rankings through an interactive 3D globe.",
     stack: [
       { label: "Three.js", key: "three.js" },
-      { label: "Data Viz", key: "dataviz" },
-      { label: "WebGL", key: "webgl" },
-      { label: "WIP", key: "wip" },
     ],
+    tags: ["Data Viz", "WebGL"],
     screenshots: [
       { src: "/images/projects/3d/3d.webp", alt: "3D interactive world rankings interface" },
     ],
@@ -104,10 +102,7 @@ export const selectedWorkProjects: PortfolioProject[] = [
     category: "OPEN SOURCE · GEOSPATIAL DATA · DEVELOPER TOOL",
     description:
       "An open-source geospatial foundation for the Philippines, providing reusable coordinate data and administrative boundary shapes that anyone can customize and build upon.",
-    stack: [
-      { label: "Open Source", key: "web" },
-      { label: "Interactive Map", key: "dataviz" },
-    ],
+    stack: [],
     screenshots: [
       { src: "/images/projects/geobase/gebase.png", alt: "Philippine GeoBase map interface" },
     ],

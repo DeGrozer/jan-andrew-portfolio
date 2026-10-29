@@ -22,6 +22,7 @@ export interface PortfolioProject {
   category: string;
   description: string;
   stack: ProjectStackItem[];
+  tags?: string[];
   image?: string;
   imageAlt: string;
   screenshots?: ProjectScreenshot[];

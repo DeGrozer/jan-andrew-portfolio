@@ -938,6 +938,35 @@ html:not([data-experience="interactive"]) .exploration-horizontal-stage::-webkit
     color: var(--muted);
   }
 
+  .project-heading-lockup {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.9rem;
+    align-items: start;
+  }
+
+  .project-index {
+    color: var(--focus);
+    font-family: var(--font-cormorant), serif;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    font-style: italic;
+    line-height: 0.76;
+    letter-spacing: -0.06em;
+  }
+
+  .project-name {
+    margin-bottom: 0.45rem;
+    color: var(--muted);
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+  }
+
+  .project-tags {
+    color: var(--muted);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+  }
+
   .project-stack-link {
     display: inline-flex;
     align-items: center;
