@@ -7,7 +7,6 @@ export interface SiteProfile {
     name: string;
     tagline: string;
     location: string;
-    scrollLabel: string;
     navigation: NavigationItem[];
     socialLinks: Array<{
         platform: "github" | "linkedin";

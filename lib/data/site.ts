@@ -4,7 +4,6 @@ export const siteProfile: SiteProfile = {
     name: "ANDREW BARTE",
     tagline: "Developer building useful web experiences, systems, and visual tools.",
     location: "BASED IN BICOL / MAKATI, PHILIPPINES",
-    scrollLabel: "SCROLL TO VIEW SELECTED WORK",
     navigation: [
         { label: "01 / SELECTED WORK", href: "/#selected-work" },
         { label: "02 / TECH STACK", href: "/#tech-stack" },

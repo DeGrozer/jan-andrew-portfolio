@@ -31,6 +31,7 @@ export function InteractiveMotion() {
             context = gsap.context(() => {
                 gsap.utils.toArray<HTMLElement>("[data-interactive-reveal]:not(.exploration-horizontal-item):not(.favorite-card)").forEach((element) => {
                     const direction = element.dataset.interactiveReveal;
+                    const start = element.closest("#home") ? "top 90%" : "top 60%";
                                         const from = direction === "left"
                         ? { autoAlpha: 0, x: -38, y: 0 }
                         : direction === "right"
@@ -48,7 +49,7 @@ export function InteractiveMotion() {
                         ease: "power3.out",
                         scrollTrigger: {
                             trigger: element,
-                            start: "top 60%",
+                            start,
                             toggleActions: "play reverse play reverse",
                         },
                     });

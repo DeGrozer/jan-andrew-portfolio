@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if grep -Eiq '^[[:space:]]*co-authored-by:' "$1"; then
+  echo "Commit rejected: remove Co-authored-by trailers before committing." >&2
+  exit 1
+fi

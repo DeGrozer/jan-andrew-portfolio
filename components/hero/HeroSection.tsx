@@ -253,7 +253,7 @@ export function HeroSection() {
                     <div className="pointer-events-none absolute bottom-[max(1.75rem,env(safe-area-inset-bottom))] left-1/2 z-20 -translate-x-1/2 text-center md:bottom-8">
                         <Link
                             href="/#selected-work"
-                            className="hero-scroll-cue pointer-events-auto inline-flex flex-col items-center gap-2 pb-2"
+                            className="hero-scroll-cue pointer-events-auto inline-flex flex-col items-center pb-2"
                             onClick={(event) => {
                                 const target = document.getElementById("selected-work");
                                 if (!target) return;
@@ -265,7 +265,6 @@ export function HeroSection() {
                             <span className="hero-scroll-mouse" aria-hidden="true">
                                 <span className="hero-scroll-dot" />
                             </span>
-                            <span className="label-mono text-[0.54rem] tracking-[0.16em]">{siteProfile.scrollLabel}</span>
                         </Link>
                     </div>
 
