@@ -114,19 +114,19 @@ section {
 .hero-scroll-mouse {
   position: relative;
   display: block;
-  width: 1.15rem;
-  height: 1.85rem;
-  border: 1px solid color-mix(in oklab, var(--foreground), transparent 35%);
+  width: 0.95rem;
+  height: 1.6rem;
+  border: 0.75px solid color-mix(in oklab, var(--foreground), transparent 35%);
   border-radius: 999px;
   transition: border-color 180ms ease, transform 180ms ease;
 }
 
 .hero-scroll-dot {
   position: absolute;
-  top: 0.35rem;
+  top: 0.28rem;
   left: 50%;
-  width: 0.22rem;
-  height: 0.42rem;
+  width: 0.16rem;
+  height: 0.32rem;
   border-radius: 999px;
   background: var(--focus);
   transform: translateX(-50%);
@@ -143,7 +143,7 @@ section {
   70%,
   100% {
     opacity: 1;
-    transform: translate(-50%, 0.65rem);
+    transform: translate(-50%, 0.55rem);
   }
 }
 

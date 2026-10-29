@@ -31,13 +31,13 @@ export function InteractiveMotion() {
             context = gsap.context(() => {
                 gsap.utils.toArray<HTMLElement>("[data-interactive-reveal]:not(.exploration-horizontal-item):not(.favorite-card)").forEach((element) => {
                     const direction = element.dataset.interactiveReveal;
-                    const start = element.closest("#home") ? "top 90%" : "top 60%";
-                                        const from = direction === "left"
+                    const isHeroElement = Boolean(element.closest("#home"));
+                    const from = direction === "left"
                         ? { autoAlpha: 0, x: -38, y: 0 }
                         : direction === "right"
                           ? { autoAlpha: 0, x: 38, y: 0 }
-                                                    : direction === "down"
-                                                        ? { autoAlpha: 0, x: 0, y: -42 }
+                          : direction === "down"
+                            ? { autoAlpha: 0, x: 0, y: -42 }
                           : { autoAlpha: 0, x: 0, y: 42 };
 
                     gsap.fromTo(element, from, {
@@ -47,11 +47,15 @@ export function InteractiveMotion() {
                         duration: 0.85,
                         delay: Number(element.dataset.interactiveDelay ?? 0),
                         ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: element,
-                            start,
-                            toggleActions: "play reverse play reverse",
-                        },
+                        ...(isHeroElement
+                            ? {}
+                            : {
+                                scrollTrigger: {
+                                    trigger: element,
+                                    start: "top 60%",
+                                    toggleActions: "play reverse play reverse",
+                                },
+                            }),
                     });
                 });
 
